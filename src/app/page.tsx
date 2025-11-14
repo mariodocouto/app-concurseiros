@@ -1,13 +1,17 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { BookOpen, Target, Trophy, Users, Clock, TrendingUp, Award, Zap } from "lucide-react";
+import { BookOpen, Target, Trophy, Clock, TrendingUp, Award, Zap } from "lucide-react";
 
 export default function Home() {
   const router = useRouter();
 
+  const handleStart = () => {
+    router.push("/onboarding");
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-600 via-purple-600 to-blue-700">
+    <div className="min-h-screen bg-gradient-to-br from-blue-600 via-purple-600 to-blue-700 relative">
       {/* Hero Section */}
       <div className="container mx-auto px-4 py-16">
         <div className="text-center mb-16">
@@ -154,13 +158,20 @@ export default function Home() {
           {/* Botão CTA */}
           <div className="text-center mt-10">
             <button 
-              onClick={() => router.push('/onboarding')}
+              onClick={handleStart}
               className="bg-white text-purple-600 font-bold text-lg px-10 py-4 rounded-full shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-300"
             >
               Começar Agora
             </button>
           </div>
         </div>
+      </div>
+
+      {/* Nome no canto inferior direito */}
+      <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6">
+        <p className="text-white/70 text-sm md:text-base font-medium">
+          Mário Couto
+        </p>
       </div>
     </div>
   );
