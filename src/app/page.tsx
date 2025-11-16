@@ -1,13 +1,10 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import { BookOpen, Target, Trophy, Clock, TrendingUp, Award, Zap } from "lucide-react";
 
 export default function Home() {
-  const router = useRouter();
-
   const handleStart = () => {
-    router.push("/onboarding");
+    alert("Em breve você poderá começar sua jornada!");
   };
 
   return (
